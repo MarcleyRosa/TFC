@@ -5,6 +5,6 @@ COPY package* ./
 RUN npm install
 COPY . .
 
-EXPOSE 3000
+EXPOSE 3001
 ENTRYPOINT ["npm", "run"]
 CMD ["start"] 
