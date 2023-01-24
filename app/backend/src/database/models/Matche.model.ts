@@ -1,7 +1,5 @@
 import { Model, DataTypes } from 'sequelize';
 import db from '.';
-// import Teams from './Teams.model';
-// import OtherModel from './OtherModel';
 
 class Matche extends Model {
   declare id: number;
@@ -48,7 +46,7 @@ Matche.init({
   underscored: true,
   sequelize: db,
   tableName: 'matches',
-  modelName: 'Matches',
+  modelName: 'matches',
   timestamps: false,
 });
 
