@@ -14,11 +14,39 @@ export default class MatchesService {
     return getAllMatches;
   }
 
-  static async findByInProgress() {
-    const findMatch = await Matches
-      .findAll();
+  static async update(match: Matches) {
+    const { homeTeamGoals, awayTeamGoals, homeTeamId, awayTeamId } = match;
+    await Matches
+      .update(
+        { homeTeamGoals, awayTeamGoals, inProgress: true },
+        { where: { homeTeamId, awayTeamId } },
+      );
+    const findUpdate = await Matches.findAll({ where: { homeTeamId, awayTeamId } });
 
-    // if (!isPassword || !findUser) return { type: 401, message: 'Incorrect email or password' };
-    return findMatch;
+    return findUpdate;
+  }
+
+  static async updateInProgress(id: string) {
+    const updateMatch = await Matches
+      .update(
+        { inProgress: false },
+        { where: { id } },
+      );
+
+    return updateMatch;
   }
 }
+// {
+//   "id": 1,
+//   "homeTeamId": 16,
+//   "homeTeamGoals": 1,
+//   "awayTeamId": 8,
+//   "awayTeamGoals": 1,
+//   "inProgress": false,
+//   "homeTeam": {
+//     "teamName": "São Paulo"
+//   },
+//   "awayTeam": {
+//     "teamName": "Grêmio"
+//   }
+// }
