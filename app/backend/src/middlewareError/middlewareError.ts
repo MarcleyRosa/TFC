@@ -4,7 +4,7 @@ import HttpException from './httpExceptions';
 const middlewareError: ErrorRequestHandler = (err, _req, res, _next) => {
   console.log('err', err);
   const { status, message } = err as HttpException;
-  res.status(status || 500).json({ message });
+  res.status(status || 401).json({ message });
 };
 
 export default middlewareError;

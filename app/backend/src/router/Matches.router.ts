@@ -9,7 +9,7 @@ MatchesRouter.get('/', (req, res, next) => MatchesController
 MatchesRouter.patch('/:id/finish', (req, res, next) => MatchesController
   .updateInProgress(req, res, next));
 
-MatchesRouter.put('/', (req, res, next) => MatchesController
-  .update(req, res, next));
+MatchesRouter.post('/', (req, res, next) => MatchesController
+  .create(req, res, next));
 
 export default MatchesRouter;

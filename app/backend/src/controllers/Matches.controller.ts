@@ -22,7 +22,7 @@ export default class MatchesController {
     }
   }
 
-  static async update(req: Request, res: Response, next: NextFunction)
+  static async create(req: Request, res: Response, next: NextFunction)
     : Promise<Response | void> {
     try {
       const { authorization } = req.headers;
@@ -30,12 +30,16 @@ export default class MatchesController {
 
       if (authorization) {
         const token = verifyToken(authorization);
-        if (token) {
-          const allMatches = await MatchesService.update(body);
-          return res.status(201).json(allMatches);
+        if (!token) {
+          return res.status(401).json({ message: 'Token must be a valid token' });
         }
+        const createMatch = await MatchesService.create(body);
+        return res.status(201).json(createMatch);
       }
-    } catch (error) {
+    } catch (error: any) {
+      const message = 'Token must be a valid token';
+      const mess = 'jwt malformed' || 'invalid token';
+      if (error.message === mess) return res.status(401).json({ message });
       next(error);
     }
   }
