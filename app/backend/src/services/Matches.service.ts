@@ -44,29 +44,14 @@ export default class MatchesService {
     return updateMatch;
   }
 
-  static async updateMatchInProgress(match: Matches) {
-    const { homeTeamGoals, awayTeamGoals, homeTeamId, awayTeamId } = match;
-    await Matches
+  static async updateMatchInProgress(id: string, match: Matches) {
+    const { homeTeamGoals, awayTeamGoals } = match;
+    const matchUpdate = await Matches
       .update(
         { homeTeamGoals, awayTeamGoals, inProgress: true },
-        { where: { homeTeamId, awayTeamId } },
+        { where: { id } },
       );
-    const findUpdate = await Matches.findAll({ where: { homeTeamId, awayTeamId } });
 
-    return findUpdate;
+    return matchUpdate;
   }
 }
-// {
-//   "id": 1,
-//   "homeTeamId": 16,
-//   "homeTeamGoals": 1,
-//   "awayTeamId": 8,
-//   "awayTeamGoals": 1,
-//   "inProgress": false,
-//   "homeTeam": {
-//     "teamName": "São Paulo"
-//   },
-//   "awayTeam": {
-//     "teamName": "Grêmio"
-//   }
-// }

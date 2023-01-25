@@ -29,6 +29,8 @@ export default class MatchesController {
       const { body } = req;
 
       if (authorization) {
+        const message = 'Token must be a valid token';
+        if (authorization.length < 193) return res.status(401).json({ message });
         const token = verifyToken(authorization);
         if (!token) {
           return res.status(401).json({ message: 'Token must be a valid token' });
@@ -37,9 +39,9 @@ export default class MatchesController {
         return res.status(201).json(createMatch);
       }
     } catch (error: any) {
-      const message = 'Token must be a valid token';
-      const mess = 'jwt malformed' || 'invalid token';
-      if (error.message === mess) return res.status(401).json({ message });
+      // const message = 'Token must be a valid token';
+      // const mess = 'jwt malformed';
+      // if (error.message === mess) return res.status(401).json({ message });
       next(error);
     }
   }
@@ -49,6 +51,17 @@ export default class MatchesController {
     try {
       const { id } = req.params;
       await MatchesService.updateInProgress(id);
+      return res.status(200).json({ message: 'Finished' });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  static async updateMatchInProgress(req: Request, res: Response, next: NextFunction)
+    : Promise<Response | void> {
+    try {
+      const { id } = req.params;
+      await MatchesService.updateMatchInProgress(id, req.body);
       return res.status(200).json({ message: 'Finished' });
     } catch (error) {
       next(error);
