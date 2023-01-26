@@ -31,7 +31,6 @@ class UserController {
         const token = verifyToken(authorization);
 
         const { email }: any = token;
-        console.log('tokennnnn', email);
 
         if (token) {
           const { role }: any = await UserService.findOne(email);

@@ -1,5 +1,6 @@
 import { Model, DataTypes } from 'sequelize';
 import db from '.';
+// import Team from './Team.model';
 
 class Matche extends Model {
   declare id: number;
@@ -50,7 +51,7 @@ Matche.init({
   timestamps: false,
 });
 
-// Example.hasMany(OtherModel, { foreignKey: 'campoC', as: 'campoEstrangeiroC' });
+// Team.hasMany(Matche, { sourceKey: 'teamName', as: 'name' });
 // Example.hasMany(OtherModel, { foreignKey: 'campoD', as: 'campoEstrangeiroD' });
 
 export default Matche;

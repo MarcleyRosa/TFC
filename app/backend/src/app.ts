@@ -1,5 +1,6 @@
 import * as express from 'express';
 import middlewareError from './middlewareError/middlewareError';
+import LeaderboardRouter from './router/Leaderboard.router';
 import MatchesRouter from './router/Matches.router';
 import TeamsRouter from './router/Teams.router';
 import UserRouter from './router/Users.router';
@@ -18,6 +19,7 @@ class App {
     this.app.use('/login', UserRouter);
     this.app.use('/teams', TeamsRouter);
     this.app.use('/matches', MatchesRouter);
+    this.app.use('/leaderboard', LeaderboardRouter);
     this.app.use(middlewareError);
   }
 

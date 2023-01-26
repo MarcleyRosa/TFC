@@ -1,5 +1,6 @@
 import { JwtPayload } from 'jsonwebtoken';
 import { Request } from 'express';
+import Matche from '../database/models/Matche.model';
 
 export interface Iuser {
   username: string
@@ -25,4 +26,9 @@ export interface IResponse {
 
 export interface CustomRequest extends Request {
   token: string | JwtPayload;
+}
+
+export interface ITeam {
+  teamName: string
+  homeTeam?: Matche[]
 }
