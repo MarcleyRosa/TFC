@@ -3,13 +3,13 @@ import Matches from '../database/models/Matche.model';
 import { ITeam } from '../interfaces';
 
 export default class MatchesService {
-  static async findAll(): Promise<ITeam[]> {
+  static async findAll(team: string): Promise<ITeam[]> {
     const getAllMatches = await Teams
       .findAll({ where: { },
         attributes: { exclude: ['id'] },
         include: [
           { model: Matches,
-            as: 'homeTeam',
+            as: team,
             attributes: { exclude: ['id', 'inProgress'] },
             where: { inProgress: false } },
         ] });
