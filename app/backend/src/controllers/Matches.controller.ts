@@ -6,9 +6,12 @@ export default class MatchesController {
   static async findAll(req: Request, res: Response, next: NextFunction)
     : Promise<Response | void> {
     try {
-      const { inProgress }: any = req.query;
+      const { inProgress } = req.query;
 
-      const isBoolean = inProgress && JSON.parse(inProgress);
+      // const rss = inProgress === 'true';
+      // const isBoolean = inProgress && JSON.parse(inProgress);
+
+      const isBoolean = inProgress === 'true';
       const inProg = { inProgress: isBoolean };
       const getAll = { };
 
@@ -38,7 +41,7 @@ export default class MatchesController {
         const createMatch = await MatchesService.create(body);
         return res.status(201).json(createMatch);
       }
-    } catch (error: any) {
+    } catch (error) {
       // const message = 'Token must be a valid token';
       // const mess = 'jwt malformed';
       // if (error.message === mess) return res.status(401).json({ message });

@@ -1,9 +1,9 @@
 import Teams from '../database/models/Team.model';
 import Matches from '../database/models/Matche.model';
-import { ITeam } from '../interfaces';
+import { ITeamInfo } from '../interfaces';
 
 export default class MatchesService {
-  static async findAll(team: string): Promise<ITeam[]> {
+  static async findAll(team: string): Promise<ITeamInfo[]> {
     const getAllMatches = await Teams
       .findAll({ where: { },
         attributes: { exclude: ['id'] },
@@ -14,10 +14,10 @@ export default class MatchesService {
             where: { inProgress: false } },
         ] });
 
-    return getAllMatches;
+    return getAllMatches as unknown as ITeamInfo[];
   }
 
-  static async findAllBoard(): Promise<ITeam[]> {
+  static async findAllBoard(): Promise<ITeamInfo[]> {
     const getAllMatches = await Teams
       .findAll({ where: { },
         attributes: { exclude: ['id'] },
@@ -32,6 +32,6 @@ export default class MatchesService {
             where: { inProgress: false } },
         ] });
 
-    return getAllMatches;
+    return getAllMatches as unknown as ITeamInfo[];
   }
 }

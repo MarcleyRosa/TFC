@@ -1,3 +1,5 @@
+import { IHomeOrAway, ITeamInfo } from '../interfaces';
+
 const pointsGame = (teamHome: number, teamAway: number) => {
   if (teamHome > teamAway) return 3;
 
@@ -20,10 +22,10 @@ const returnLose = (teamHome: number, teamAway: number) => {
   return 0;
 };
 
-const calc = (team: any) => {
+const calc = (team: ITeamInfo) => {
   let points = 0; let vic = 0; let draw = 0; let lose = 0; let golFavor = 0; let goalOwn = 0;
 
-  team.homeTeam?.forEach((match: any) => {
+  team.homeTeam?.forEach((match: IHomeOrAway) => {
     const { homeTeamGoals, awayTeamGoals } = match;
     points += pointsGame(homeTeamGoals, awayTeamGoals);
     vic += returnVictory(homeTeamGoals, awayTeamGoals);
@@ -31,7 +33,7 @@ const calc = (team: any) => {
     lose += returnLose(homeTeamGoals, awayTeamGoals);
     golFavor += homeTeamGoals; goalOwn += awayTeamGoals;
   });
-  team.awayTeam?.forEach((match: any) => {
+  team.awayTeam?.forEach((match: IHomeOrAway) => {
     const { homeTeamGoals, awayTeamGoals } = match;
     points += pointsGame(awayTeamGoals, homeTeamGoals);
     vic += returnVictory(awayTeamGoals, homeTeamGoals);
@@ -42,8 +44,8 @@ const calc = (team: any) => {
   return { points, vic, draw, lose, golFavor, goalOwn };
 };
 
-const Leaderboard = (allMatches: any) => {
-  const allMat = allMatches.map((team: any) => {
+const Leaderboard = (allMatches: ITeamInfo[]) => {
+  const allMat = allMatches.map((team: ITeamInfo) => {
     const values = calc(team);
     const totGames = team.homeTeam.length + team.awayTeam.length;
     const newObj = ({

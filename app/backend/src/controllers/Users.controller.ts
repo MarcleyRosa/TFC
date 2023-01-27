@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { isUser } from '../middlewares/schame';
 import { tokenUser, verifyToken } from '../middlewares/jwtFunctions';
 import UserService from '../services/Users.service';
+import { Itoken, Iuser } from '../interfaces';
 
 class UserController {
   static async findByUser(req: Request, res: Response, next: NextFunction)
@@ -13,9 +14,7 @@ class UserController {
         return res.status(400).json({ message: 'All fields must be filled' });
       }
       const token = tokenUser(req.body);
-      const { message, type }: any = await UserService.findByUser(req.body);
-
-      if (type) return res.status(type).json({ message });
+      await UserService.findByUser(req.body);
 
       return res.status(200).json({ token });
     } catch (error) {
@@ -28,12 +27,12 @@ class UserController {
       const { authorization } = req.headers;
 
       if (authorization) {
-        const token = verifyToken(authorization);
+        const token = verifyToken(authorization) as Itoken;
 
-        const { email }: any = token;
+        const { email } = token;
 
         if (token) {
-          const { role }: any = await UserService.findOne(email);
+          const { role } = await UserService.findOne(email) as Iuser;
           return res.status(200).json({ role });
         }
       }
