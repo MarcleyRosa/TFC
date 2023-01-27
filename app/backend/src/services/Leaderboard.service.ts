@@ -16,11 +16,22 @@ export default class MatchesService {
 
     return getAllMatches;
   }
-}
 
-// { where: { inProgress: false },
-//         attributes: { exclude: ['id'] },
-//         include: [
-//           { model: Teams, as: 'homeTeam', attributes: { exclude: ['id'] } },
-//           { model: Teams, as: 'awayTeam', attributes: { exclude: ['id'] } },
-//         ] }
+  static async findAllBoard(): Promise<ITeam[]> {
+    const getAllMatches = await Teams
+      .findAll({ where: { },
+        attributes: { exclude: ['id'] },
+        include: [
+          { model: Matches,
+            as: 'homeTeam',
+            attributes: { exclude: ['id', 'inProgress'] },
+            where: { inProgress: false } },
+          { model: Matches,
+            as: 'awayTeam',
+            attributes: { exclude: ['id', 'inProgress'] },
+            where: { inProgress: false } },
+        ] });
+
+    return getAllMatches;
+  }
+}
