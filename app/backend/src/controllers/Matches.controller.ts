@@ -39,6 +39,7 @@ export default class MatchesController {
           return res.status(401).json({ message: 'Token must be a valid token' });
         }
         const createMatch = await MatchesService.create(body);
+        console.log('aaaaaaasss', createMatch);
         return res.status(201).json(createMatch);
       }
     } catch (error) {

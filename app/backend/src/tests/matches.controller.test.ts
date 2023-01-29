@@ -4,62 +4,59 @@ import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 
 import { app } from '../app';
-import Match from '../database/models/Matche.model';
+import match from '../database/models/Matche.model';
 
 import { Response } from 'superagent';
+import { bodyRequest, mockMatcheCreate, mockMatches, userMock } from './mocks';
 
 chai.use(chaiHttp);
 
 const { expect } = chai;
 
-const mockUserValidate = {
-  "role": "user"
-}
-
-const userMock = {
-  username: 'Admin',
-  role: 'admin',
-  email: 'admin@admin.com',
-  password: '$2a$08$xi.Hxk1czAO0nZR..B393u10aED0RQ1N3PAEXQ7HxtLjKPEZBu.PW'
-}
-
-const findUser = {
-  id: 2,
-  username: 'User',
-  role: 'user',
-  email: 'user@user.com',
-  password: '$2a$08$Y8Abi8jXvsXyqm.rmp0B.uQBA5qUz7T6Ghlg/CvVr/gLxYj5UAZVO'
-}
-
-const bodyRequest = {
-  "email": "user@user.com",
-  "password": "secret_user"
-}
-
-describe('Users func findByUser', () => {
+describe('Matches func findAll', () => {
   let chaiHttpResponse: Response;
 
   before(async () => {
     sinon
-      .stub(Match, "findOne")
-      .resolves(userMock as unknown as Match);
+      .stub(match, "findAll")
+      .resolves(mockMatches as any);
   });
 
   after(()=>{
-    (Match.findOne as sinon.SinonStub).restore();
+    (match.findAll as sinon.SinonStub).restore();
   })
 
-  it('...', async () => {
+  it('findAll Matches sucessful', async () => {
     chaiHttpResponse = await chai
        .request(app)
-       .post('/login')
-       .send({ email: bodyRequest.email });
+       .get('/matches')
 
-       expect(chaiHttpResponse.status).to.equal(400);
-       expect(chaiHttpResponse.body.message).to.equal('All fields must be filled');
+       expect(chaiHttpResponse.status).to.equal(200);
+       expect(chaiHttpResponse.body).to.deep.equal(mockMatches);
   });
 
-  it('Seu sub-teste', () => {
-    expect(true).to.be.eq(true);
+});
+
+describe('Matches func create', () => {
+  let chaiHttpResponse: Response;
+
+  before(async () => {
+    sinon
+      .stub(match, "create")
+      .resolves(mockMatches as any);
   });
+
+  after(()=>{
+    (match.create as sinon.SinonStub).restore();
+  })
+
+  // it('create status 201', async () => {
+  //   chaiHttpResponse = await chai
+  //      .request(app)
+  //      .post('/matches')
+  //      .send({ ...mockMatcheCreate });
+
+  //      expect(chaiHttpResponse.status).to.equal(200);
+  // });
+
 });
