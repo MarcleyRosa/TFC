@@ -52,7 +52,7 @@ O projeto é composto de 4 entidades importantes para sua estrutura:
 </details>
 
 <details>
-<summary><strong> ⚠️ Configurações mínimas para execução do projeto</strong></summary><br />
+<summary><strong> Configurações mínimas para execução do projeto</strong></summary><br />
 
 Na sua máquina você deve ter:
 
