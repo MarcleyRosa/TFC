@@ -1,8 +1,5 @@
 # Boas vindas ao repositório do Trybe Futebol Clube!
 
-<details>
-<summary><strong> Sobre o Projeto</strong></summary><br />
-
   ![Exemplo app front](assets/front-example.png)
 
   O `TFC` é um site informativo sobre partidas e classificações de futebol! ⚽️
@@ -11,8 +8,6 @@
 
   Para adicionar uma partida é necessário ter um _token_, portanto a pessoa deverá estar logada para fazer as alterações.
   O back-end implementa regras de negócio para popular adequadamente a tabela disponível no front-end que será exibida para o usuário do sistema.
-
-</details>
 
 <details>
 <summary><strong> Estrutura do projeto</strong></summary><br />
