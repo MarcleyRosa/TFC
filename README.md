@@ -365,10 +365,16 @@ sempre considerando as premissas anteriores.
   
   4º Gols sofridos.
 
+    - Os endpoints dessa seção, irão alimentar uma tabela idêntica ao exemplo abaixo no front-end:
 
-  ⚠️ **Atenção:** ⚠️
+    | Classificação | Time        | P   | J   | V   | E   | D   | GP  | GC  | SG  | %    |
+    | ------------- | ----------- | --- | --- | --- | --- | --- | --- | --- | --- | ---- |
+    | 1             | Ferroviária | 38  | 15  | 12  | 2   | 1   | 44  | 13  | 31  | 84.4 |
 
-**Exemplo de retorno esperado:**
+
+  </details>
+  <details>
+  <summary><strong> Retorno Esperado </strong></summary>
 
 ```json
 [
@@ -411,11 +417,5 @@ sempre considerando as premissas anteriores.
   ...
 ]
 ```
-
-  - Os endpoints dessa seção, irão alimentar uma tabela idêntica ao exemplo abaixo no front-end:
-
-    | Classificação | Time        | P   | J   | V   | E   | D   | GP  | GC  | SG  | %    |
-    | ------------- | ----------- | --- | --- | --- | --- | --- | --- | --- | --- | ---- |
-    | 1             | Ferroviária | 38  | 15  | 12  | 2   | 1   | 44  | 13  | 31  | 84.4 |
 
 </details>
