@@ -86,7 +86,8 @@ Na sua máquina você deve ter:
 
 - O arquivo `docker-compose.yml` também pode ser utilizado para executar a aplicação na sua máquina local, para isso é necessário executar o comando `npm run compose:up` na raiz do projeto.
 - Obs.: Se você quiser fazer o build da aplicação usando o `docker-compose.dev.yml`, você pode usar o comando: `npm run compose:up:dev -- --build`.
-
+  
+  </details>
 <details>
 <summary><strong> ⚠️ Inicialização do compose e verificação dos logs das aplicações </strong></summary><br />
 
