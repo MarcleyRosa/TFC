@@ -355,13 +355,14 @@ sempre considerando as premissas anteriores.
     - `SG`: Saldo total de gols;
     - `%`: Aproveitamento do time.
 
-    <br/>
-
   **Ordem para desempate**
 
   1º Total de Vitórias;
+  
   2º Saldo de gols;
+  
   3º Gols a favor;
+  
   4º Gols sofridos.
 
 
@@ -422,7 +423,7 @@ sempre considerando as premissas anteriores.
 ## Leaderboard Home
 
  <details>
-<summary><strong> Exemplo de um Retorno esperado: </strong></summary> <br/>
+<summary><strong> Exemplo de Retorno: </strong></summary> <br/>
 
 ```json
 [
