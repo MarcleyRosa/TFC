@@ -419,9 +419,6 @@ sempre considerando as premissas anteriores.
 
 </details>
 
-<details>
-  <summary><strong> Leaderboard Home </strong></summary>
-
 ## Leaderboard Home
 
  <details>
