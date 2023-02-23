@@ -1,7 +1,7 @@
 # Boas vindas ao repositório do Trybe Futebol Clube!
 
 <details>
-<summary><strong>👨‍💻 Sobre o Projeto</strong></summary><br />
+<summary><strong> Sobre o Projeto</strong></summary><br />
 
   ![Exemplo app front](assets/front-example.png)
 
@@ -39,7 +39,7 @@ O projeto é composto de 4 entidades importantes para sua estrutura:
 # Orientações
 
 <details>
-<summary><strong> 🔰 Iniciando o projeto</strong></summary><br />
+<summary><strong> Iniciando o projeto</strong></summary><br />
 
   1. Clone o repositório `git clone git@github.com:MarcleyRosa/TFC.git` 
 
@@ -75,9 +75,9 @@ Na sua máquina você deve ter:
 </details>
 
 <details>
-<summary><strong>🐳 Configuração Docker</strong></summary><br />
+<summary><strong> Configuração Docker</strong></summary><br />
 
-  ### Docker e Docker-compose
+  ### Docker e Docker-compose 🐳
 
   ⚠ O docker-compose precisa estar na versão 1.29 ou superior.  ⚠
 [Veja aqui a documentação para atualizar o docker-compose.](https://docs.docker.com/compose/install/)
@@ -89,7 +89,7 @@ Na sua máquina você deve ter:
   
   </details>
 <details>
-<summary><strong> ⚠️ Inicialização do compose e verificação dos logs das aplicações </strong></summary><br />
+<summary><strong> Inicialização do compose e verificação dos logs das aplicações </strong></summary><br />
 
 - Considerando o uso do parâmetro `healthcheck` em cada container do seu `docker-compose.yml`, a inicialização dos containers deve aguardar o comando de status de saúde (o que valida se aquele container está operacional ou não):
   - No container `db`, representado por um comando `ping` no banco de dados;
@@ -107,7 +107,7 @@ sempre considerando as premissas anteriores.
 </details>
 
 <details id='Variaveis-de-ambiente'>
-<summary><strong> ⚙️ Variáveis de ambiente </strong></summary><br />
+<summary><strong> Variáveis de ambiente </strong></summary><br />
 
   **No diretório `app/backend/` renomeie o arquivo `.env.example` para `.env` e configure os valores de acordo com o cenário do seu ambiente (credenciais de banco de dados, secrets desejadas e etc)**. Isso vai permitir que você inicialize a aplicação fora do _container_ e ela se conecte com seu banco local caso deseje.
  > `./app/backend/.env.example`
@@ -124,7 +124,7 @@ sempre considerando as premissas anteriores.
 
 
 <details id='sequelize'>
-  <summary><strong>🎲 Sequelize</strong></summary>
+  <summary><strong> Sequelize</strong></summary>
   <br/>
 
   ⚠️ O `package.json` do diretório `app/backend` contém um script `db:reset` que é responsável por "dropar" o banco, recriar e executar as _migrations_ e _seeders_. Você pode executá-lo com o commando `npm run db:reset` se por algum motivo precisar recriar a base de dados;
