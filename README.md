@@ -168,15 +168,19 @@ sempre considerando as premissas anteriores.
 
 </details>
 
+## Times
+
+<details>
+  <summary><strong> Introdução </strong></summary>
+
+ - O consumo da rota `/teams` retorna os nomes dos times associados à partida na renderização do front-end
+
+</details>
+
 <details>
   <summary><strong> Exemplos de Retorno </strong></summary>
 
-
-- As senhas que existem no banco de dados estão encriptadas.
-
-## Times
-
- Exemplo de retorno da requisição:
+### O endpoint `/teams` retorna todos os times.
 
 ```json
 [
@@ -196,14 +200,33 @@ sempre considerando as premissas anteriores.
 ]
 ```
 
+### O endpoint `/teams/:id` retorna os dados de um time específico
+
+```json
+{
+  "id": 5,
+  "teamName": "Cruzeiro"
+}
+```
+
 </details>
 
+
 ## Partidas
+<details>
+
+  <summary><strong> Introdução </strong></summary>
 
   - Será validado que, ao escolher a opção de partidas em andamento, serão filtradas todas as partidas em andamento;
 
   - Essa requisição deverá usar `query string` para definir o parâmetro:
     ex: `matches?inProgress=true`
+  
+  </details>
+  
+  <details>
+  
+  <summary><strong> Exemplos de Retorno </strong></summary>
 
   Exemplo de retorno da requisição:
   ```json
