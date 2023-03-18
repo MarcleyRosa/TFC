@@ -1,7 +1,5 @@
 # Boas vindas ao repositório do TFC!
 
- ![front-example](https://user-images.githubusercontent.com/98854232/226073520-5c5a0a0e-cc2a-4c9b-be35-221878e90610.png)
-
   O `TFC` é um site informativo sobre partidas e classificações de futebol! ⚽️
 
   Nesse projeto, existe **um back-end dockerizado utilizando modelagem de dados através do Sequelize**.**respeitando as regras de negócio**, e com a **API sendo consumida por um front-end do projeto**.
@@ -11,7 +9,8 @@
 
 <details>
 <summary><strong> Estrutura do projeto</strong></summary><br />
-
+ ![front-example](https://user-images.githubusercontent.com/98854232/226073520-5c5a0a0e-cc2a-4c9b-be35-221878e90610.png)
+ 
 O projeto é composto de 4 entidades importantes para sua estrutura:
 
 1️⃣ **Banco de dados:**
