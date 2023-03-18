@@ -1,4 +1,4 @@
-# Boas vindas ao repositório do Trybe Futebol Clube!
+# Boas vindas ao repositório do TFC!
 
   ![Exemplo app front](assets/front-example.png)
 
