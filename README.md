@@ -10,7 +10,7 @@
 <details>
 <summary><strong> Estrutura do projeto</strong></summary><br />
  ![front-example](https://user-images.githubusercontent.com/98854232/226073520-5c5a0a0e-cc2a-4c9b-be35-221878e90610.png)
- 
+
 O projeto é composto de 4 entidades importantes para sua estrutura:
 
 1️⃣ **Banco de dados:**
