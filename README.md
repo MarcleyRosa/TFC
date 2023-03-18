@@ -1,6 +1,6 @@
 # Boas vindas ao repositório do TFC!
 
-  ![Exemplo app front](assets/front-example.png)
+ ![front-example](https://user-images.githubusercontent.com/98854232/226073520-5c5a0a0e-cc2a-4c9b-be35-221878e90610.png)
 
   O `TFC` é um site informativo sobre partidas e classificações de futebol! ⚽️
 
