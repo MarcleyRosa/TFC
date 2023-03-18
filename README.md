@@ -2,7 +2,7 @@
 
   O `TFC` é um site informativo sobre partidas e classificações de futebol! ⚽️
 
-  Nesse projeto, existe **um back-end usando TypeScript, Node.js com docker utilizando modelagem de dados através do Sequelize **.**respeitando as regras de negócio**, e com a **API sendo consumida por um front-end do projeto**.
+  Nesse projeto, existe **um back-end usando TypeScript, Node.js com docker utilizando modelagem de dados através do Sequelize**.**respeitando as regras de negócio**, e com a **API sendo consumida por um front-end do projeto**.
 
   Para adicionar uma partida é necessário ter um _token_, portanto a pessoa deverá estar logada para fazer as alterações.
   O back-end implementa regras de negócio para popular adequadamente a tabela disponível no front-end que será exibida para o usuário do sistema.
